@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="dist/output.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="/path/to/default/favicon.ico" type="image/x-icon" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    html,
+    body {
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    @property --num {
+      syntax: '<integer>';
+      initial-value: 0;
+      inherits: false;
+    }
+
+  </style>
+  <title>Birthday</title>
+</head>
+
+<body class="font-poppins bg-white text-black dark:bg-slate-800 dark:text-white">
+  <!-- Navbar Section Start -->
+  <nav
+    class="fixed bg-white bg-opacity-80 backdrop-blur-sm dark:bg-slate-800 dark:bg-opacity-80 dark:backdropbackdrop-blur-sm w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-slate-600">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <span class="flex items-center">
+        <span class="self-center text-2xl font-semibold whitespace-nowrap">Birthday</span>
+      </span>
+
+      <div class="flex md:order-2">
+        <button data-collapse-toggle="navbar-sticky" type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-white dark:hover:bg-slate-600 dark:focus:ring-white"
+          aria-controls="navbar-sticky" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
+      </div>
+      <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+        <ul
+          class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 dark:border-slate-600 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
+          <li>
+            <a href="#hero"
+              class="block py-2 pl-3 pr-4 dark:hover:text-slate-600 hover:bg-gray-300 md:hover:bg-transparent rounded md:bg-transparent md:hover:text-slate-300 md:p-0"
+              aria-current="page">Home</a>
+          </li>
+          <li>
+            <a href="#counter"
+              class="block py-2 pl-3 pr-4 dark:hover:text-slate-600 hover:bg-gray-300 md:hover:bg-transparent rounded md:bg-transparent md:hover:text-slate-300 md:p-0"
+              aria-current="page">Time</a>
+          </li>
+          <li>
+            <a href="#about"
+              class="block py-2 pl-3 pr-4 rounded dark:hover:text-slate-600 hover:bg-gray-300 md:hover:bg-transparent md:hover:text-slate-300 md:p-0">Abstract</a>
+          </li>
+          <li>
+            <a href="#Portfolio"
+              class="block py-2 pl-3 pr-4 rounded dark:hover:text-slate-600 hover:bg-gray-300 md:hover:bg-transparent md:hover:text-slate-300 md:p-0">Gallery</a>
+          </li>
+          <li>
+            <a href="#contact"
+              class="block py-2 pl-3 pr-4 rounded dark:hover:text-slate-600 hover:bg-gray-300 md:hover:bg-transparent md:hover:text-slate-300 md:p-0">Contact</a>
+          </li>
+
+          <li class="pl-4 pt-4 md:pt-0 md:pl-0">
+            <a class="hs-dark-mode-active:hidden block hs-dark-mode group items-center text-gray-600 hover:text-blue-600 font-medium dark:text-gray-400 dark:hover:text-gray-500"
+              href="#!" data-hs-theme-click-value="dark">
+              <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z" />
+              </svg>
+            </a>
+            <a class="hs-dark-mode-active:block hidden hs-dark-mode group items-center text-gray-600 hover:text-blue-600 font-medium dark:text-white"
+              href="#!" data-hs-theme-click-value="light">
+              <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" viewBox="0 0 16 16">
+                <path
+                  d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar Section End -->
+
+  <!-- Hero Section Start -->
+  <section id="hero" class="pt-36 pb-32 lg:pt-44">
+    <div class="container">
+      <div class="flex flex-wrap">
+        <div class="w-full self-center px-4 lg:w-1/2">
+          <img src="assets/profile.png" alt="profile" class="w-72 mx-auto lg:w-80 xl:w-96" data-aos="fade-right"
+            data-aos-duration="1000" />
+        </div>
+
+        <div class="mt-10 mx-auto text-center self-center lg:w-1/2 ">
+          <h3 class="font-normal text-2xl lg:text-3xl xl:text-5xl" data-aos="fade-left" data-aos-duration="1000">Happy
+            Birthday</h3>
+          <div class="relative flex justify-center">
+            <h1 id="text" class="absolute whitespace-nowrap font-extrabold text-xl pt-2 lg:text-3xl xl:text-4xl"
+              data-aos="fade-up" data-aos-duration="1000"></h1>
+          </div>
+          <h2 class="font-normal pt-11 pb-2 lg:text-2xl xl:mt-3 xl:text-3xl xl:pb-3" data-aos="fade-right"
+            data-aos-duration="1000">For The 22nd Years Old</h2>
+
+          <div
+            class="font-bold lg:w-52 xl:w-72 lg:mx-auto cursor-pointer flex justify-center gap-3 py-2 px-4 rounded-full border-solid border-2 shadow-xl border-black hover:bg-black hover:text-white dark:border-slate-600 dark:hover:bg-slate-600"
+            id="playButton" data-aos="fade-down" data-aos-duration="1000">
+            <svg xmlns="http://www.w3.org/2000/svg" class="fill-current hover:fill-white" height="1.5em"
+              viewBox="0 0 384 512" id="playIcon">
+              <path
+                d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="hidden fill-current hover:fill-white" height="1.5em"
+              viewBox="0 0 320 512" id="pauseIcon">
+              <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <style>
+                svg {
+                  fill: #000000;
+                }
+              </style>
+              <path
+                d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z" />
+            </svg>
+            <p>Play Music</p>
+            <audio id="music" src="/assets/Lizzo - Birthday Girl (Official Audio).mp3" loop></audio>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Hero Section End -->
+
+  <!-- Counter day Start -->
+  <section id="counter" class="pt-20 pb-32 md:pt-44 xl:pt-60">
+    <div class="container">
+      <div class="text-center lg:pt-10">
+        <h4 class="text-base lg:text-xl" data-aos="fade-down" data-aos-duration="1000">A Time Since</h4>
+        <h1 class="text-3xl font-bold lg:text-3xl" data-aos="fade-down" data-aos-duration="1000">Someone Born</h1>
+      </div>
+
+      <section class="grid gap-12 md:grid-cols-3 md:gap-16 mt-16 w-full px-4">
+        <!-- Block #1 -->
+        <article data-aos="fade-right" data-aos-duration="1000">
+          <h2>
+            <span
+              class="flex tabular-nums text-5xl font-extrabold mb-2 transition-[_--num] duration-[3s] ease-out [counter-set:_num_var(--num)] supports-[counter-set]:before:content-[counter(num)]"
+              x-data="{ shown: false }" x-intersect="shown = true" :class="shown && '[--num:264]'">
+              <span class="supports-[counter-set]:sr-only">264</span>
+            </span>
+            <span class="inline-flex font-semibold mb-2">Month</span>
+          </h2>
+          <p class="text-sm text-slate-500">Terimakasih sudah berjuang sejauh ini.</p>
+        </article>
+        <!-- Block #2 -->
+        <article data-aos="fade-up" data-aos-duration="1000">
+          <h2>
+            <span
+              class="flex tabular-nums text-5xl font-extrabold mb-2 transition-[_--num] duration-[3s] ease-out [counter-set:_num_var(--num)] supports-[counter-set]:before:content-[counter(num)]"
+              x-data="{ shown: false }" x-intersect="shown = true" :class="shown && '[--num:1148]'">
+              <span class="supports-[counter-set]:sr-only">1148</span>
+            </span>
+            <span class="inline-flex font-semibold mb-2">Week</span>
+          </h2>
+          <p class="text-sm text-slate-500">Terimakasih telah bertahan selama ini.</p>
+        </article>
+        <!-- Block #3 -->
+        <article data-aos="fade-left" data-aos-duration="1000">
+          <h2>
+            <span
+              class="flex tabular-nums text-5xl font-extrabold mb-2 transition-[_--num] duration-[3s] ease-out [counter-set:_num_var(--num)] supports-[counter-set]:before:content-[counter(num)]"
+              x-data="{ shown: false }" x-intersect="shown = true" :class="shown && '[--num:8036]'">
+              <span class="supports-[counter-set]:sr-only">8036</span>
+            </span>
+            <span class="inline-flex font-semibold mb-2">Day</span>
+          </h2>
+          <p class="text-sm text-slate-500">Terimakasih telah menjadi jiwa yang tak pernah menyerah sampai sekarang.</p>
+        </article>
+      </section>
+    </div>
+  </section>
+  <!-- Counter day End -->
+
+  <!-- Abstarct Section Start -->
+  <section id="about" class="pt-20 pb-32 xl:pt-56">
+    <div class="container">
+      <div class="text-center lg:pt-10">
+        <h4 class="text-base lg:text-xl" data-aos="fade-down" data-aos-duration="1000">A Little Abstract</h4>
+        <h1 class="text-3xl font-bold lg:text-5xl" data-aos="fade-up" data-aos-duration="1000">Someone</h1>
+        <h5 class="text-3xl font-bold lg:text-5xl" data-aos="fade-up" data-aos-duration="1000"></h5>
+      </div>
+      <div class="flex flex-wrap">
+        <div class="w-full px-4 mb-10 lg:w-1/2">
+          <p class="pt-5 lg:text-xl xl:mt-10" data-aos="fade-right" data-aos-duration="1000">
+            Bertambahnya usia merupakan sebuah anugerah yang Tuhan berikan dan sudah sepatutnya untuk disyukuri oleh
+            setiap insan manusia. Tepat pada tanggal 05 November 2003 seorang bayi dilahirkan dari rahim seorang ibu
+            yang kuat dan
+            hebat. Bayi tersebut diberi nama ******** ******* oleh orang tuanya. *****, biasa orang memanggil
+            namanya, pada tahun ini genap berusia 22 tahun.
+          </p>
+        </div>
+        <div class="w-full px-4 mb-10 lg:w-1/2">
+          <p class="pt-5 lg:text-xl xl:mt-10" data-aos="fade-left" data-aos-duration="1000">
+            Doa baik dipanjatkan kepada Yang Kuasa agar ***** selalu diberikan kemudahan dan keberkahan. Selain itu,
+            harapan akan kebahagiaan di dunia maupun di akhirat dipanjatkan saya selaku penulis untuk *****. Semangat
+            terus ya *****,
+            semoga apa yang ***** inginkan bisa tercapai dengan mudah dan secepatnya. Semoga ***** selalu kuat sampai
+            kapanpun! Terimakasih sudah berjuang hingga saat ini
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Abstarct Section End -->
+
+  <!-- Carousel Section Start -->
+  <section id="Portfolio" class="pt-20 pb-32 xl:pt-60 xl:pb-64">
+    <div class="container">
+      <div class="w-full px-4">
+        <div class="max-w-xl mx-auto text-center mb-16">
+          <h4 class="text-base lg:text-xl" data-aos="fade-down" data-aos-duration="1000">A Little Gallery About</h4>
+          <h1 class="text-4xl font-bold lg:text-5xl" data-aos="fade-up" data-aos-duration="1000">Someone</h1>
+          <h4 class="text-base pt-2" data-aos="fade-down" data-aos-duration="1000">*If you are using a desktop, click
+            the card and scroll using the right and left buttons</h4>
+        </div>
+
+        <div class="flex flex-row justify-center px-4">
+          <div class="w-full px-4 flex flex-wrap justify-center md:w-1/2 lg:w-1/3 xl:w-1/4" data-aos="fade-right"
+            data-aos-duration="1000">
+            <div id="carousel"
+              class="carousel carousel-center p-4 space-x-4 bg-slate-100 dark:bg-neutral shadow-xl dark:shadow-gray-500 rounded-box">
+              <div class="carousel-item">
+                <img src="/carousel/1.png" alt="b11" class="rounded-box w-52" />
+              </div>
+              <div class="carousel-item">
+                <img src="/carousel/2.png" alt="b12" class="rounded-box w-52" />
+              </div>
+              <div class="carousel-item">
+                <img src="/carousel/3.png" alt="b13" class="rounded-box w-52" />
+              </div>
+              <div class="carousel-item">
+                <img src="/carousel/4.png" alt="b14" class="rounded-box w-52" />
+              </div>
+              <div class="carousel-item">
+                <img src="/carousel/5.png" alt="b15" class="rounded-box w-52" />
+              </div>
+              <div class="carousel-item">
+                <img src="/carousel/6.png" alt="b16" class="rounded-box w-52" />
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full px-4 justify-center hidden md:w-1/2 md:block lg:w-1/3 xl:w-1/4" data-aos="fade-up"
+            data-aos-duration="1000">
+            <div id="carousel"
+              class="carousel carousel-center p-4 space-x-4 bg-slate-100 shadow-xl dark:bg-neutral dark:shadow-gray-500 rounded-box">
+              <div class="carousel-item">
+                <img src="/carousel/11.png" alt="b21" class="rounded-box w-52" />
+              </div>
+              <div class="carousel-item">
+                <img src="/carousel/12.png" alt="b22" class="rounded-box w-52" />
+              </div>
+              <div class="carousel-item">
+                <img src="/carousel/13.png" alt="b23" class="rounded-box w-52" />
+              </div>
+              <div class="carousel-item">
+                <img src="/carousel/14.png" alt="b24" class="rounded-box w-52" />
+              </div>
+              <div class="carousel-item">
+                <img src="/carousel/15.png" alt="b25" class="rounded-box w-52" />
+              </div>
+              <div class="carousel-item">
+                <img src="/carousel/16.png" alt="b26" class="rounded-box w-52" />
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full px-4 justify-center hidden md:hidden lg:block lg:w-1/3 xl:w-1/4" data-aos="fade-left"
+            data-aos-duration="1000">
+            <div id="carousel"
+              class="carousel carousel-center p-4 space-x-4 bg-slate-100 shadow-xl dark:bg-neutral dark:shadow-gray-500 rounded-box">
+              <div class="carousel-item">
+                <img src="/carousel/31 (1).png" alt="b31" class="rounded-box w-52" />
+              </div>
+              <div class="carousel-item">
+                <img src="/carousel/31 (2).png" alt="b32" class="rounded-box w-52" />
+              </div>
+              <div class="carousel-item">
+                <img src="/carousel/31 (3).png" alt="b33" class="rounded-box w-52" />
+              </div>
+              <div class="carousel-item">
+                <img src="/carousel/31 (4).png" alt="b34" class="rounded-box w-52" />
+              </div>
+              <div class="carousel-item">
+                <img src="/carousel/31 (5).png" alt="b35" class="rounded-box w-52" />
+              </div>
+              <div class="carousel-item">
+                <img src="/carousel/31 (6).png" alt="b36" class="rounded-box w-52" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Carousel Section End -->
+
+  <!-- Contact Section Start -->
+  <section id="contact" class="pt-36 pb-32">
+    <div class="container">
+      <div class="w-full px-4 mb-8">
+        <div class="text-center lg:pt-10">
+          <h4 class="text-base lg:text-xl" data-aos="fade-down" data-aos-duration="1000">Get In Touch</h4>
+          <h1 class="text-3xl font-bold lg:text-5xl" data-aos="fade-up" data-aos-duration="1000">Contact Me</h1>
+        </div>
+      </div>
+      <form name="submit-to-google-sheet">
+        <div class="w-full lg:w-2/3 lg:mx-auto">
+          <div id="dismiss-alert" class="hidden hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 bg-teal-100 border border-teal-200 rounded-md p-4 mb-4 " role="alert">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <svg class="h-4 w-4 text-teal-400 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                </svg>
+              </div>
+              <div class="ml-3">
+                <div class="text-sm text-teal-800 font-medium" data-aos="fade-right" data-aos-duration="1000">We have received your message! Thank You.</div>
+              </div>
+              <div class="pl-3 ml-auto">
+                <div class="-mx-1.5 -my-1.5">
+                  <button
+                    type="button"
+                    class="inline-flex bg-teal-100 rounded-md p-1.5 text-teal-500 hover:bg-teal-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-teal-50 focus:ring-teal-600"
+                    data-hs-remove-element="#dismiss-alert"
+                  >
+                    <span class="sr-only">Dismiss</span>
+                    <svg class="h-3 w-3" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path
+                        d="M0.92524 0.687069C1.126 0.486219 1.39823 0.373377 1.68209 0.373377C1.96597 0.373377 2.2382 0.486219 2.43894 0.687069L8.10514 6.35813L13.7714 0.687069C13.8701 0.584748 13.9882 0.503105 14.1188 0.446962C14.2494 0.39082 14.3899 0.361248 14.5321 0.360026C14.6742 0.358783 14.8151 0.38589 14.9468 0.439762C15.0782 0.493633 15.1977 0.573197 15.2983 0.673783C15.3987 0.774389 15.4784 0.894026 15.5321 1.02568C15.5859 1.15736 15.6131 1.29845 15.6118 1.44071C15.6105 1.58297 15.5809 1.72357 15.5248 1.85428C15.4688 1.98499 15.3872 2.10324 15.2851 2.20206L9.61883 7.87312L15.2851 13.5441C15.4801 13.7462 15.588 14.0168 15.5854 14.2977C15.5831 14.5787 15.4705 14.8474 15.272 15.046C15.0735 15.2449 14.805 15.3574 14.5244 15.3599C14.2437 15.3623 13.9733 15.2543 13.7714 15.0591L8.10514 9.38812L2.43894 15.0591C2.23704 15.2543 1.96663 15.3623 1.68594 15.3599C1.40526 15.3574 1.13677 15.2449 0.938279 15.046C0.739807 14.8474 0.627232 14.5787 0.624791 14.2977C0.62235 14.0168 0.730236 13.7462 0.92524 13.5441L6.59144 7.87312L0.92524 2.20206C0.724562 2.00115 0.611816 1.72867 0.611816 1.44457C0.611816 1.16047 0.724562 0.887983 0.92524 0.687069Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-full px-4 mb-8" data-aos="fade-left" data-aos-duration="1000">
+            <label for="name" class="text-base font-bold">Name</label>
+            <input type="text" name="nama" placeholder="Insert your name..." id="name" class="w-full bg-slate-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 shadow-xl dark:text-gray-800" />
+          </div>
+          <div class="w-full px-4 mb-8" data-aos="fade-right" data-aos-duration="1000">
+            <label for="email" class="text-base font-bold after:content-['*'] after:text-red-500 after:ml-0.5">Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email..."
+              id="email"
+              class="peer w-full bg-slate-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 shadow-xl invalid:text-red-500 dark:text-gray-800 invalid:focus:ring-red-500 invalid:focus:border-red-500"
+            />
+            <p class="m-1 text-sm text-red-500 invisible peer-invalid:visible">Please provide a valid email address</p>
+          </div>
+          <div class="w-full px-4 mb-8" data-aos="fade-left" data-aos-duration="1000">
+            <label for="message" class="text-base font-bold"">Message...</label>
+            <textarea type="text" name="pesan" placeholder="Enter your message" id="name" class="w-full bg-slate-200 p-3 rounded-xl dark:text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 h-32 shadow-xl"></textarea>
+          </div>
+          <div class="w-full px-4" data-aos="fade-up" data-aos-duration="1000">
+            <button
+              type="submit"
+              class="btn-submit w-full py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white shadow-xl align-middle hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
+            >
+              Send
+            </button>
+            <button
+              type="submit"
+              class="btn-loading hidden w-full py-3 px-4 justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-white shadow-xl hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white "
+            >
+              <span class="animate-spin inline-block w-4 h-4 border-[3px] border-current border-t-transparent rounded-full" role="status" aria-label="loading"></span>
+              Loading
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- Contact Section End -->
+
+
+
+  <!-- Footer Section Start -->
+  <footer class="rounded-lg">
+    <div class="w-full mx-auto max-w-screen-xl p-4 flex items-center justify-center">
+      <span class="text-sm sm:text-center">© 2023 <a class="hover:underline">WahyuG™</a>. All Rights Reserved. </span>
+    </div>
+  </footer>
+  <!-- Footer Section End -->
+
+  <script src="./script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="./autotyping.js"></script>
+  <script src="./node_modules/preline/dist/preline.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script>
+    AOS.init();
+  </script>
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwcDVqPodyvDTevVKM70qNSLB-q0QkoP1kZbywH88Z0cpeCrgk1lsdAOUUH71ny_iFi/exec';
+        const form = document.forms['submit-to-google-sheet'];
+        const btnKirim = document.querySelector('.btn-submit');
+        const btnLoading = document.querySelector('.btn-loading');
+        const myAlert = document.querySelector('#dismiss-alert');
+  
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+  
+          btnLoading.classList.toggle('hidden');
+          btnKirim.classList.toggle('hidden');
+  
+          fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then((response) => {
+              btnLoading.classList.toggle('hidden');
+              btnKirim.classList.toggle('hidden');
+              console.log('Success!', response);
+              myAlert.classList.toggle('hidden');
+              form.reset();
+            })
+            .catch((error) => console.error('Error!', error.message));
+        });
+      </script>
+</body>
+</html>
